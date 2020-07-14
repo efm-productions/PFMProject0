@@ -11,7 +11,6 @@
 TODO:
 click anywhere on the window & play a note
 if you click & drag, it will change the note's pitch
-Should we play a sound?
 
 */
 #pragma once
@@ -61,8 +60,10 @@ public:
     void getStateInformation (MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
+    // my public member variables
+    bool shouldPlaySound = false;
+
 private:
-    bool shouldPlaySound = true;
     Random r;
 
     //==============================================================================

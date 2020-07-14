@@ -26,6 +26,11 @@ public:
     void paint (Graphics&) override;
     void resized() override;
 
+    // add 2 memberfunction declarations for handling mouse events
+    void mouseDown(const MouseEvent& e) override;
+    void mouseUp(const MouseEvent& e) override;
+    //============================================================
+
 private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.

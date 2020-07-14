@@ -40,3 +40,15 @@ void Pfmproject0AudioProcessorEditor::resized()
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
 }
+
+// implementation for the 2 member fuctions for handling mouse events
+void Pfmproject0AudioProcessorEditor::mouseUp(const MouseEvent& e)
+{
+    processor.shouldPlaySound = false;
+}
+void Pfmproject0AudioProcessorEditor::mouseDown(const MouseEvent& e)
+{
+    processor.shouldPlaySound = true;
+}
+
+//===================================================================
