@@ -152,15 +152,16 @@ void Pfmproject0AudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBu
     // interleaved by keeping the same state.
     for (int i = 0; i < buffer.getNumSamples(); ++i)
     {
-        for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
+        // efm 9-9-2020: changed channel to channelnum
+        for (int channelnum = 0; channelnum < buffer.getNumChannels(); ++channelnum)
         {
             if (shouldPlaySound)
             {
-                buffer.setSample(channel, i, r.nextFloat());
+                buffer.setSample(channelnum, i, r.nextFloat());
             }
             else
             {
-                buffer.setSample(channel, i, 0);
+                buffer.setSample(channelnum, i, 0);
             }
         }
     }
